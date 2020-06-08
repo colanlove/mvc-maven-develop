@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn" monitorInterval="30" strict="true" schema="Log4J-V2.2.xsd">
+
+    <!-- 文件路径 -->
+    <properties>
+        <!--设置日志在硬盘上输出的目录${log4j:configParentLocation}使用此查找将日志文件放在相对于log4j配置文件的目录中-->
+        <property name="Log_Home">${web:rootDir}/logs</property>
+    </properties>
+
+    <appenders>
+        <!-- 将日志输出到控制台 -->
+        <console name="Console" target="SYSTEM_OUT">
+            <patternLayout pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %level [%C{36}.%M] - %msg%n"/>
+        </console>
+
+        <!--将日志输出到文件中-->
+        <file name="myLogFile" fileName="${Log_Home}/info.${date:yyyy-MM-dd}.log" append="true">
+            <patternLayout pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %level [%C{36}.%M] - %msg%n"/>
+        </file>
+    </appenders>
+
+    <loggers>
+        <logger name="org.springframework.core" level="info">
+        </logger>
+        <logger name="org.springframework.beans" level="info">
+        </logger>
+        <logger name="org.springframework.context" level="info">
+        </logger>
+        <logger name="org.springframework.web" level="info">
+        </logger>
+
+        <!--建立一个默认的root的logger-->
+        <root level="info">
+            <appender-ref ref="Console"/>
+            <appender-ref ref="myLogFile"/>
+        </root>
+    </loggers>
+
+</Configuration>
