@@ -5,6 +5,8 @@
 * spring mvc 5.2.6
 * jackson 2.11 json输出
 * log4j2 日志
+* gson 格式化json
+* aop 切日志
 
 ### 模块
 * common-develop 通用模块 jar包

@@ -29,10 +29,11 @@ public class DemoController {
      * @return map
      */
     @RequestMapping("/test")
-    public Map test() {
+//    @WebLog(description = "切入点.....")
+    public Map test(String str) {
 
         logger.info("controller里的log");
-        return CommonResponse.custom("8888", "测试消息", demoService.testMethod());
+        return CommonResponse.custom("8888", "测试消息", demoService.testMethod(str));
     }
 
 }

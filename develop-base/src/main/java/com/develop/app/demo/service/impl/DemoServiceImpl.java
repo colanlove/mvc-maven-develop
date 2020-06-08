@@ -17,8 +17,9 @@ public class DemoServiceImpl implements DemoService {
      * test方法，给controller test用的
      */
     @Override
-    public String testMethod() {
+    public String testMethod(String str) {
         logger.info("service里的log");
-        return "demo test method";
+
+        return "demo test method " + str;
     }
 }
