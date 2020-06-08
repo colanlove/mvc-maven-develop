@@ -2,5 +2,8 @@ package com.develop.app.demo.service;
 
 public interface DemoService {
 
-    String test();
+    /**
+     * test方法，给controller test用的
+     */
+    String testMethod();
 }

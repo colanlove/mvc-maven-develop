@@ -8,17 +8,26 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 import java.util.Map;
 
+/**
+ * demo演示用的controller
+ */
 @RestController
 public class DemoController {
 
+    // 演示用的service注入
     @Resource
     DemoService demoService;
 
+    /**
+     * test方法
+     * 返回json报文
+     *
+     * @return map
+     */
     @RequestMapping("/test")
-    public Map<String, Object> test() {
+    public Map test() {
 
-        Map<String, Object> map = CommonResponse.success(demoService.test());
-
-        return map;
+        return CommonResponse.custom("8888", "测试消息", demoService.testMethod());
     }
+
 }
