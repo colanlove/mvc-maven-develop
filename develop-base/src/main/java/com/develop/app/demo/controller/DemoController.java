@@ -29,7 +29,6 @@ public class DemoController {
      * @return map
      */
     @RequestMapping("/test")
-//    @WebLog(description = "切入点.....")
     public Map test(String str) {
 
         logger.info("controller里的log");
