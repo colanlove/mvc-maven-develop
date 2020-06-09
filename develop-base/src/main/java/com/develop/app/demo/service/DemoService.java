@@ -1,9 +1,11 @@
 package com.develop.app.demo.service;
 
+import java.util.List;
+
 public interface DemoService {
 
     /**
      * test方法，给controller test用的
      */
-    String testMethod(String str);
+    List testMethod(String str);
 }

@@ -3,15 +3,25 @@
         "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-    <display-name>Archetype Created Web Application</display-name>
+    <display-name>Web Application</display-name>
 
+    <!-- 加载spring容器 -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:config/spring/spring-mybatis.xml</param-value>
+    </context-param>
     <!--log4j2 配置-->
     <context-param>
         <param-name>log4jConfiguration</param-name>
         <param-value>classpath:config/log4j2/log4j2.xml</param-value>
     </context-param>
+
+    <!-- 监听器 -->
     <listener>
         <listener-class>org.apache.logging.log4j.web.Log4jServletContextListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
 
     <!-- spring mvc 配置 -->
@@ -29,6 +39,7 @@
         <servlet-name>SpringMVC</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+
 </web-app>
 
 

@@ -20,7 +20,7 @@ public class DemoController {
 
     // 演示用的service注入
     @Resource
-    DemoService demoService;
+    private DemoService demoService;
 
     /**
      * test方法
